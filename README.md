@@ -20,8 +20,11 @@ It can either retrieve tokens using service account credentials or from Google's
 
   ```elixir
   config :goth,
-    json: "path/to/google/json/creds.json" |> File.read!
+    json: "path/to/google/json/creds.json" |> File.read!,
+    request_opts: [proxy: "127.0.0.1:1087"] # optional
   ```
+
+  `request_opts` is useful for configuaring proxy and SSL options, etc.
 
   Or, via an ENV var:
   ```elixir
